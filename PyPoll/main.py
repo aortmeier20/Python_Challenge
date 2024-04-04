@@ -59,7 +59,7 @@ print('-------------------------')
 
 
 #print the results to file
-out_file_path = "PyPoll/election_results.txt"
+out_file_path = "PyPoll/analysis/election_results.txt"
 with open(out_file_path, 'w') as file_out:
     file_out.write('Election Results\n')
     file_out.write('-------------------------\n')
