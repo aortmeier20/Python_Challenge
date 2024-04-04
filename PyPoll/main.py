@@ -45,7 +45,9 @@ print('-------------------------')
 print(f'Total Votes: {total_votes}')
 print('-------------------------')
 for candidate in candidates:
-        print(f'{candidate}: 23.049% ({candidate_votes[candidates.index(candidate)]})')
+        current_candidate_votes = candidate_votes[candidates.index(candidate)]
+        current_vote_pct = (current_candidate_votes/total_votes) *100
+        print(f'{candidate}: {current_vote_pct}% ({candidate_votes})')
 # Charles Casper Stockham: 23.049% (85213)
 # Diana DeGette: 73.812% (272892)
 # Raymon Anthony Doane: 3.139% (11606)
