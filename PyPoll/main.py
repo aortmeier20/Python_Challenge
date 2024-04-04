@@ -1,7 +1,7 @@
 #
 #1. The total number of votes cast - done
 #2. A complete list of candidates who received votes - done*
-#3. The percentage of votes each candidate won
+#3. The percentage of votes each candidate won - done*
 #4. The total number of votes each candidate won - done*
 #5. The winner of the election based on popular vote
 
@@ -47,7 +47,7 @@ print('-------------------------')
 for candidate in candidates:
         current_candidate_votes = candidate_votes[candidates.index(candidate)]
         current_vote_pct = (current_candidate_votes/total_votes) *100
-        print(f'{candidate}: {current_vote_pct}% ({candidate_votes})')
+        print(f'{candidate}: {round(current_vote_pct,3)}% ({candidate_votes})')
 # Charles Casper Stockham: 23.049% (85213)
 # Diana DeGette: 73.812% (272892)
 # Raymon Anthony Doane: 3.139% (11606)
