@@ -30,7 +30,6 @@ with open(file_path) as text:
             sum_balance += int(profit_loss)
         total_months = total_months + 1
 
-
 print('Financial Analysis')
 print('----------------------------')
 print(f'Total Months: {total_months}')
