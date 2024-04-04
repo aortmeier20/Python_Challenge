@@ -3,7 +3,7 @@ file_path = "PyBank/Resources/budget_data.csv"
 
 #The total number of months included in the dataset - Done
 
-#The net total amount of "Profit/Losses" over the entire period
+#The net total amount of "Profit/Losses" over the entire period - Done
 
 #The changes in "Profit/Losses" over the entire period, and then the average of those changes
 
@@ -35,8 +35,6 @@ print('Financial Analysis')
 print('----------------------------')
 print(f'Total Months: {total_months}')
 print(f'Total: {sum_balance}')
-#print(row_number)
-#print(sum_balance)
 
 
 #Financial Analysis
