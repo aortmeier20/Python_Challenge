@@ -2,7 +2,7 @@
 #1. The total number of votes cast - done
 #2. A complete list of candidates who received votes - done*
 #3. The percentage of votes each candidate won
-#4. The total number of votes each candidate won
+#4. The total number of votes each candidate won - done*
 #5. The winner of the election based on popular vote
 
 #S
@@ -13,6 +13,7 @@ election_file_path = "PyPoll/Resources/election_data.csv"
 
 total_votes = 0
 candidates = []
+candidate_votes = []
 #open the file
 with open(election_file_path) as election_file:
     csv_file = csv.reader(election_file)
@@ -29,6 +30,12 @@ with open(election_file_path) as election_file:
         if candidate not in candidates:
             # add to list if they haven't been added
             candidates.append(candidate) 
+            candidate_votes.append(1) # add the first vote
+        else: # candidate is in list
+            candidate_id = candidates.index(candidate)
+            candidate_votes[candidate_id] +=1
+
+          
 
 
 
@@ -37,9 +44,14 @@ print('Election Results')
 print('-------------------------')
 print(f'Total Votes: {total_votes}')
 print('-------------------------')
-
+for candidate in candidates:
+        print(f'{candidate}: 23.049% ({candidate_votes[candidates.index(candidate)]})')
+# Charles Casper Stockham: 23.049% (85213)
+# Diana DeGette: 73.812% (272892)
+# Raymon Anthony Doane: 3.139% (11606)
 print(len(candidates), "candidates")
 print(candidates, "candidates")
+print(candidate_votes)
 
 #print the results to file
 
