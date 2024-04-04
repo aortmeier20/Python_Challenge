@@ -1,6 +1,6 @@
 #
-#1. The total number of votes cast
-#2. A complete list of candidates who received votes
+#1. The total number of votes cast - done
+#2. A complete list of candidates who received votes - done*
 #3. The percentage of votes each candidate won
 #4. The total number of votes each candidate won
 #5. The winner of the election based on popular vote
@@ -12,7 +12,7 @@ import csv
 election_file_path = "PyPoll/Resources/election_data.csv"
 
 total_votes = 0
-
+candidates = []
 #open the file
 with open(election_file_path) as election_file:
     csv_file = csv.reader(election_file)
@@ -21,10 +21,26 @@ with open(election_file_path) as election_file:
     for row in csv_file:
         #add to total votes
         total_votes += 1
+        #Ballot ID,County,Candidate
+        ballot_id = row[0]
+        county = row[1]
+        candidate = row[2]
+        #check if candidate exists
+        if candidate not in candidates:
+            # add to list if they haven't been added
+            candidates.append(candidate) 
+
 
 
 #print the results to screen
-print(total_votes)
+print('Election Results')
+print('-------------------------')
+print(f'Total Votes: {total_votes}')
+print('-------------------------')
+
+print(len(candidates), "candidates")
+print(candidates, "candidates")
+
 #print the results to file
 
 
