@@ -4,17 +4,6 @@
 import csv
 file_path = "PyBank/Resources/budget_data.csv"
 
-#The total number of months included in the dataset - Done
-
-#The net total amount of "Profit/Losses" over the entire period - Done
-
-#The changes in "Profit/Losses" over the entire period, and then the average of those changes
-
-#The greatest increase in profits (date and amount) over the entire period
-
-#The greatest decrease in profits (date and amount) over the entire period
-
-
 
 
 #create variables
@@ -36,6 +25,7 @@ with open(file_path) as budget_file:
     for row in csv_file: 
         #add to total months
         total_months += 1
+        #set current profit loss for change
         current_profit_loss = int(row[1])
         if total_months >= 0:
             #define columns
@@ -57,6 +47,8 @@ with open(file_path) as budget_file:
             greatest_decrease = change
             greatest_decrease_date = Date
     average_change = total_change/len(changes)
+
+
 
 # print to terminal
 print('Financial Analysis')
@@ -80,10 +72,3 @@ with open(out_file_path, 'w') as file_out:
     file_out.write(f'Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})\n')
 
 #E
-#Financial Analysis
-#----------------------------
-#Total Months: 86
-#Total: $22564198
-#Average Change: $-8311.11
-#Greatest Increase in Profits: Aug-16 ($1862002)
-#Greatest Decrease in Profits: Feb-14 ($-1825558)
