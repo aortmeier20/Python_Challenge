@@ -1,3 +1,6 @@
+#S
+
+
 import csv
 file_path = "PyBank/Resources/budget_data.csv"
 
@@ -17,25 +20,41 @@ file_path = "PyBank/Resources/budget_data.csv"
 
 total_months = 0
 sum_balance = 0
+changes = []
+total_change = 0
+average_change = 0
+current_profit_loss = 0
+previous_profit_loss = 0
 
 #open the file
 with open(file_path) as text:
     csv_file = csv.reader(text)
     next(csv_file) #skips a row in the file ( first row =header row_)
     for row in csv_file:
-        
-        if total_months >= 0:
+        current_profit_loss = int(row[1]) 
+        total_months = total_months + 1 
+        if total_months >= 1:
+            #calculate total months
             Date = row[0]
+            #calculate net total
             profit_loss = row[1]
             sum_balance += int(profit_loss)
-        total_months = total_months + 1
+            #calculate change
+            change = current_profit_loss - previous_profit_loss
+            changes.append(change)
+            total_change += change
+            previous_profit_loss = current_profit_loss
+    average_change = total_change / len(changes)
 
 print('Financial Analysis')
 print('----------------------------')
 print(f'Total Months: {total_months}')
 print(f'Total: {sum_balance}')
+print(f'Average Change: {average_change}')
 
 
+
+#E
 #Financial Analysis
 #----------------------------
 #Total Months: 86
