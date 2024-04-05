@@ -18,6 +18,7 @@ greatest_increase = 0
 greatest_increase_date = ""
 greatest_decrease = 0
 greatest_decrease_date = ""
+
 #open the file
 with open(file_path) as budget_file:
     csv_file = csv.reader(budget_file)
@@ -28,12 +29,12 @@ with open(file_path) as budget_file:
         #set current profit loss for change
         current_profit_loss = int(row[1])
         if total_months >= 0:
-            #define columns
+        #define columns
             Date = row[0]
             profit_loss = row[1]
-            #calculate net total
+        #calculate net total
             sum_balance += int(profit_loss)
-            #calculate change
+        #calculate change
             change = current_profit_loss - previous_profit_loss
             changes.append(change)
             total_change += change
